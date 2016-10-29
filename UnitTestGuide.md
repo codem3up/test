@@ -6,7 +6,13 @@ TODO cite wikipedia or some source.
 
 ## Test driven development
 
-TODO add the TDD process
+Test driven development is a simple iterative cycle where the tests are written before the code that the tests are testing. It requires an understanding of how the code should work and what needs to be tested.
+
+1. Write a unit test.
+  *This test should be written such that running it now fails. A test with no underlying code implementation that passes isn't actually testing anything!
+2. Implement enough of the underlying code to get the test to pass when it runs.
+3. Repeat until the underlying code has been finished and is sufficiently tested.
+
 
 ### Tests should be FIRST
 
