@@ -28,7 +28,27 @@ NUnit offers many different kinds of attributes for marking test methods and cla
 
 `[TearDown]` Methods marked with this attribute will be called after *every* test within a fixture.
 
+
+### Author Tags
+
+It makes more sense to tag an author in the creation of a test fixture and the test methods. Other authors can come in and edit the test fixture by adding a new test method or changing a test method. The `[Author("Joe Doe", "Amanda Doe")] would be ideal for adding multiple authors.
+
+```C#
+[TestFixture]
+    [Author("Richard")]
+    public class Test1
+    {
+        [TestCase(10, 20, 30)]
+        [TestCase(-5, 15, 10)]
+        [Author("Joe")]
+        public void AddNumbersTest(int a, int b, int expected)
+```
+
+Richard was the one who created the test fixture but Joe added the test method later. If both Richard and Joe made the fixture then naturally they would both be in there as well.
+
+
 More on attributes can be found [here](https://github.com/nunit/docs/wiki/Attributes).
+
 
 ### NUnit Assertions
 
@@ -61,7 +81,7 @@ Assert.That(someString, Is.Not.Empty);
 More on NUnit assertions can be found [here](https://github.com/nunit/docs/wiki/Assertions).
 A list of constraints can be found [here](https://github.com/nunit/docs/wiki/Constraints).
 
-#### NUnit examples
+## NUnit examples
 
 An example using CWMasterTeacher
 
@@ -107,30 +127,30 @@ namespace CWTesting
 
 
 
-#### Using Moq
+## Using Moq
 
 TODO Explain Moq
 
-#### Where to use Moq
+## Where to use Moq
 
 TODO Explain which parts of CWMasterTeacher Moq is useful
 
-#### Examples using Moq
+## Examples using Moq
 
 TODO Add Andrew's moq examples
 TODO get real examples eventually
 
 
-#### Running the tests
+## Running the tests
 
 TODO talk about test explorer
 
-#### Test driven development
+## Test driven development
 
 TODO add the TDD process
 
 
-#### CWMasterTeacher Testing Conventions
+## CWMasterTeacher Testing Conventions
 
 ### What should and should not be tested
 
@@ -151,26 +171,7 @@ When a large group is working on a project, it is always a good idea to use univ
 Because of this naming convention, we will know exactly what portion of the test either passes or fails without having to expand each individual test case. Without even knowing any code, we would understand exactly what to look at if “EmailHasValidEmailAddress” in the “StudentTest” class failed the unit test.
 
 
-
-
-### Author Tags
-
-It makes more sense to tag an author in the creation of a test fixture and the test methods. Other authors can come in and edit the test fixture by adding a new test method or changing a test method. The `[Author("Joe Doe", "Amanda Doe")] would be ideal for adding multiple authors.
-
-```C#
-[TestFixture]
-    [Author("Richard")]
-    public class Test1
-    {
-        [TestCase(10, 20, 30)]
-        [TestCase(-5, 15, 10)]
-        [Author("Joe")]
-        public void AddNumbersTest(int a, int b, int expected)
-```
-
-Richard was the one who created the test fixture but Joe added the test method later. If both Richard and Joe made the fixture then naturally they would both be in there as well.
-
-### Unit test structure guidelines
+## Unit test structure guidelines
 According to Microsoft, a unit test should be split up in to three main categories. These are arrange, act, and assert. Most unit tests should be short and easy to read and understand. Comments are usually not needed because the test itself should be descriptive through its code.
 
 1. Arrange – This is where you declare any of the variables that will be needed throughout the testing of each method. Everything but the method we’re testing should be set in this category.
@@ -235,12 +236,12 @@ public class MathHelperTest
 The above example is ideal to what Dr. Beaty and Dr. Dollard said when it comes to testing arguments. A test method can be written generically and then test cases with data can be easily passed in without having to write up multiple test methods for different kinds of data or writing a very long test method with many types of data and assertions.
 
 
-#### Code Coverage
+## Code Coverage
 
 TODO 90% coverage, process to measure coverage
 
 
-#### Additional help
+## Additional help
 For other problems or questions you can contact the following
 
 * Richard - rdesilve@msudenver.edu 
