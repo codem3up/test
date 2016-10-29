@@ -242,7 +242,7 @@ To open the Test Explorer click on the Test>Windows>Test Explorer.
 
 The Test Explorer window has convienient buttons to run all of the tests or an individual test. It is best to Run All of the tests whenever changes are made to the code.
 
-![the Test Explorer window](UnitTestGuideImages/testExplorer.jpg)
+![the Test Explorer window](./UnitTestGuideImages/testExplorer.jpg =100x100)
 
 
 
