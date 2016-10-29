@@ -240,7 +240,7 @@ In Visual Studio the tests are run using the Test Explorer.
 
 To open the Test Explorer click on the Test>Windows>Test Explorer.
 
-The Test Explorer window has convienient buttons to run all of the tests or an individual test. It is best to Run All of the tests whenever changes are made to the code.
+The Test Explorer window has convienient buttons to run all of the tests or an individual test. It is best to run all of the tests whenever changes are made to the code.
 
 ![the Test Explorer window](./UnitTestGuideImages/testExplorer.jpg)
 
@@ -251,7 +251,20 @@ The Test Explorer window has convienient buttons to run all of the tests or an i
 
 ### What should and should not be tested
 
-TODO expand on types of things to test
+Unit tests should test behavior, not necessarily methods. For example it makes little sense to getter and setter methods. Many tests will require a combination of method calls so having a test for each method not make sense.
+
+In testing behavior we should be trying to expose bugs. Beyond normal expected behavior there are several edge cases we want to ensure we test for:
+
+1. Nullable types
+..* Any time something can accept a nullable type we should test passing null in and make sure the object handles it gracefully. The exception assertions above are useful here.
+2. Empty strings
+3. Boundary case
+..* If it accepts a number what happens if the number is 0
+..* Negative numbers
+..* Int32.MaxValue
+..* Using the `[TestCase(x,y,z)]` attribute can be useful for these types of checks.
+
+
 
 
 ### Structure of the CWTesting project
