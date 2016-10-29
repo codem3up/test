@@ -129,13 +129,13 @@ namespace CWTesting
 
 ## Using Moq
 
-TODO Explain Moq
+Moq is a mocking library for use in unit testing. Unit tests should be isolated to the object or class under testing, not any dependancies of the object. Mocks are objects created by the unit test that can stand in as a dependendcy allowing the unit test to isolate the testing object's behavior.
 
-## Where to use Moq
+### Where to use Moq
 
-TODO Explain which parts of CWMasterTeacher Moq is useful
+Moq will be useful for testing the Repositories and anything that acts directly with the database.
 
-## Examples using Moq
+### Examples using Moq
 
 TODO Add Andrew's moq examples
 TODO get real examples eventually
