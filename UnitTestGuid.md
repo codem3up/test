@@ -10,7 +10,7 @@ NUnit offers many different kinds of attributes for marking test methods and cla
 
 
 ### Best Practices
-According to Microsoft, a unit test should be split up in to three main categories. These are arrange, act, and assert. Most unit tests should be short and easy to read and understand. Comments are usually not needed because the test itself should be descriptive through it's code.
+According to Microsoft, a unit test should be split up in to three main categories. These are arrange, act, and assert. Most unit tests should be short and easy to read and understand. Comments are usually not needed because the test itself should be descriptive through its code.
 
 1. Arrange – This is where you declare any of the variables that will be needed throughout the testing of each method. Everything but the method we’re testing should be set in this category.
 
