@@ -261,13 +261,13 @@ Unit tests should test behavior, not necessarily methods. For example it makes l
 In testing behavior we should be trying to expose bugs. Beyond normal expected behavior there are several edge cases we want to ensure we test for:
 
 1. Nullable types
-..* Any time something can accept a nullable type we should test passing null in and make sure the object handles it gracefully. The exception assertions above are useful here.
+  * Any time something can accept a nullable type we should test passing null in and make sure the object handles it gracefully. The exception assertions above are useful here.
 2. Empty strings
 3. Boundary case
-..* If it accepts a number what happens if the number is 0
-..* Negative numbers
-..* Int32.MaxValue
-..* Using the `[TestCase(x,y,z)]` attribute can be useful for these types of checks.
+  * If it accepts a number what happens if the number is 0
+  * Negative numbers
+  * Int32.MaxValue
+  * Using the `[TestCase(x,y,z)]` attribute can be useful for these types of checks.
 
 
 
