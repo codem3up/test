@@ -9,7 +9,8 @@ TODO cite wikipedia or some source.
 
 ### Using NUnit 
 
-The NUnit framework is used for testing all .NET languages. You can visit [NUnit](https://github.com/nunit) on git and for more reference when using NUnit visit there documentation page [here]()
+The CWMasterTeacher project uses the NUnit framework. This guide will introduce you to the basics of NUnit.
+NUnit can be used for testing all .NET languages. You can visit [NUnit Wiki](https://github.com/nunit/docs/wiki) on github for more information on using NUnit.
 
 #### NUnit Attributes
 
