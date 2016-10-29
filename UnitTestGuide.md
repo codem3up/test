@@ -12,7 +12,7 @@ TODO cite wikipedia or some source.
 The CWMasterTeacher project uses the NUnit framework. This guide will introduce you to the basics of NUnit.
 NUnit can be used for testing all .NET languages. You can visit [NUnit Wiki](https://github.com/nunit/docs/wiki) on github for more information on using NUnit.
 
-#### NUnit Attributes
+### NUnit Attributes
 
 NUnit offers many different kinds of attributes for marking test methods and classes. 
 
@@ -30,7 +30,7 @@ NUnit offers many different kinds of attributes for marking test methods and cla
 
 More on attributes can be found [here](https://github.com/nunit/docs/wiki/Attributes).
 
-#### NUnit Assertions
+### NUnit Assertions
 
 Inside of each unit test you will need to make an assertion. This is the statement that must be valid for the test to pass. It is best to limit the number of assertions inside a unit test to 1 or a few.
 
@@ -66,7 +66,7 @@ A list of constraints can be found [here](https://github.com/nunit/docs/wiki/Con
 TODO add some examples from the CWMasterTeacher code
 
 
-### Using Moq
+#### Using Moq
 
 TODO Explain Moq
 
@@ -80,16 +80,16 @@ TODO Add Andrew's moq examples
 TODO get real examples eventually
 
 
-## Running the tests
+#### Running the tests
 
 TODO talk about test explorer
 
-## Test driven development
+#### Test driven development
 
 TODO add the TDD process
 
 
-## CWMasterTeacher Testing Conventions
+#### CWMasterTeacher Testing Conventions
 
 ### What should and should not be tested
 
@@ -194,12 +194,12 @@ public class MathHelperTest
 The above example is ideal to what Dr. Beaty and Dr. Dollard said when it comes to testing arguments. A test method can be written generically and then test cases with data can be easily passed in without having to write up multiple test methods for different kinds of data or writing a very long test method with many types of data and assertions.
 
 
-## Code Coverage
+#### Code Coverage
 
 TODO 90% coverage, process to measure coverage
 
 
-## Additional help
+#### Additional help
 For other problems or questions you can contact the following
 
 * Richard - rdesilve@msudenver.edu 
