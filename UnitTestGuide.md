@@ -28,11 +28,38 @@ NUnit offers many different kinds of attributes for marking test methods and cla
 
 `[TearDown]` Methods marked with this attribute will be called after *every* test within a fixture.
 
+More on attributes can be found [here](https://github.com/nunit/docs/wiki/Attributes).
 
 #### NUnit Assertions
 
-TODO add list of useful assertions, exception assertions
+Inside of each unit test you will need to make an assertion. This is the statement that must be valid for the test to pass. It is best to limit the number of assertions inside a unit test to 1 or a few.
 
+NUnit provides many different ways to make assertions. Some useful examples using NUnit3 style constraints:
+
+```C#
+//Is.EqualTo
+Assert.That(1, Is.EqualTo(1));
+Assert.That(testString, Is.EqualTo(expectedString);
+
+//Is.Empty
+Assert.That(someString, Is.Empty);
+
+//Is.True Is.False
+Assert.That(condition, Is.True);
+Assert.That(condition, Is.False);
+
+//Is.Null
+Assert.That(returnValue, Is.Null);
+
+
+//Constraints can be negated using Not
+Assert.That(returnValue, Is.Not.Null);
+Assert.That(someString, Is.Not.Empty);
+```
+
+
+More on NUnit assertions can be found [here](https://github.com/nunit/docs/wiki/Assertions).
+A list of constraints can be found [here](https://github.com/nunit/docs/wiki/Constraints).
 
 #### NUnit examples
 
