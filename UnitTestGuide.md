@@ -4,6 +4,95 @@
 
 TODO cite wikipedia or some source.
 
+## Test driven development
+
+TODO add the TDD process
+
+### Tests should be FIRST
+
+[F] : Fast
+When unit tests run they take time to complete. Unit tests should be fast otherwise it becomes a problem everytime you make a change to the code base you have to wait for your test suite to complete.
+
+[I] : Isolate
+Unit tests are testing **units** or **chunks** of code. The code you are testing may interact with a database or shared data, these tests shouldn't be testing on the same database as other developers. This may cause tests to fail sometimes and create flaky tests. Elements of tests should be isolated. Anything outside your control should be mocked or stubbed.
+
+[R] : Repeatable
+Good tests are repeatable, that is each time tests are run they always produce the same results. Tests that sometimes pass or sometimes fail are bad tests. 
+
+[S] : Self-Validating
+Tests are supposed to be able to save time. If your tests are pumping out verbose output then you are wasting time. Your tests should be validating expected data with little to no output to logs. The only time output is needed is if the
+test fails with proper description.
+
+[T] : Timely
+Unit testing is a good habit to have, you can write tests at virtually anytime but writing tests in a timely fashion is very important for meeting deadlines. If you start to neglect writing tests, similar to skipping any kind of good habit, will cause problems to slowly build. Similar to doing chores around your house. Sometimes you may skip vacuuming that one
+time but continue to neglect it and dust really starts to build and when you do go and clean it takes longer to do.
+
+Keep in mind that writing tests also adds more code that must be maintained. Writing good simple, focused, maintainable tests saves time and saves money. 
+
+### Unit test structure guidelines
+According to Microsoft, a unit test should be split up in to three main categories. These are arrange, act, and assert. Most unit tests should be short and easy to read and understand. Comments are usually not needed because the test itself should be descriptive through its code.
+
+1. Arrange – This is where you declare any of the variables that will be needed throughout the testing of each method. Everything but the method we’re testing should be set in this category.
+
+2. Act – This is where the logic happens. All of the pieces that are required to run the method(s) have already been created, so it’s time to run the method in question. This will generally contain 1-2 lines of code.
+
+3. Assert – This is the test itself. We will assert that the result of the method is supposed to either be equal to, or not equal to, the expected result defined by the user. This will generally only contain one or two lines of code.
+
+``` C#
+[TestFixture]
+public class MathHelperTest
+ {
+      [TestCase(10, 20, 30)]
+      [TestCase(-5, 15, 10)]
+      public void AddNumbersTest(int a, int b, int expected)
+      {
+           //Arrange
+           MathHelper helper = new MathHelper();
+
+           //Act
+           int result = helper.Add(a, b);
+
+           //Assert
+           Assert.That(result, Is.EqualTo(expected));
+       }
+
+       // Not ideal for this kind of test, multiple assertions
+       [Test]
+       public void AddNumbersTest()
+       {
+                
+           MathHelper helper = new MathHelper();
+
+           int result = helper.Add(10, 20);
+           Assert.That(result, Is.EqualTo(30));
+
+           result = helper.Add(15, -10);
+           Assert.That(result, Is.EqualTo(5));
+       }
+
+       // Not ideal, multiple test methods with unnecessary test names would be needed
+       [Test]
+       public void AddPositiveNumbers()
+       {
+           MathHelper helper = new MathHelper();
+
+           int result = helper.Add(10, 20);
+           Assert.That(result, Is.EqualTo(30));
+       }
+       [Test]
+       public void AddNegativeNumbers()
+       {
+           MathHelper helper = new MathHelper();
+
+           int result = helper.Add(-10, -20);
+           Assert.That(result, Is.EqualTo(-30));
+       }
+}
+
+```
+
+The above example is ideal to what Dr. Beaty and Dr. Dollard said when it comes to testing arguments. A test method can be written generically and then test cases with data can be easily passed in without having to write up multiple test methods for different kinds of data or writing a very long test method with many types of data and assertions.
+
 ## Writing unit tests
 
 
@@ -144,96 +233,6 @@ TODO get real examples eventually
 ## Running the tests
 
 TODO talk about test explorer
-
-## Test driven development
-
-TODO add the TDD process
-
-### Tests should be FIRST
-
-[F] : Fast
-When unit tests run they take time to complete. Unit tests should be fast otherwise it becomes a problem everytime you make a change to the code base you have to wait for your test suite to complete.
-
-[I] : Isolate
-Unit tests are testing **units** or **chunks** of code. The code you are testing may interact with a database or shared data, these tests shouldn't be testing on the same database as other developers. This may cause tests to fail sometimes and create flaky tests. Elements of tests should be isolated. Anything outside your control should be mocked or stubbed.
-
-[R] : Repeatable
-Good tests are repeatable, that is each time tests are run they always produce the same results. Tests that sometimes pass or sometimes fail are bad tests. 
-
-[S] : Self-Validating
-Tests are supposed to be able to save time. If your tests are pumping out verbose output then you are wasting time. Your tests should be validating expected data with little to no output to logs. The only time output is needed is if the
-test fails with proper description.
-
-[T] : Timely
-Unit testing is a good habit to have, you can write tests at virtually anytime but writing tests in a timely fashion is very important for meeting deadlines. If you start to neglect writing tests, similar to skipping any kind of good habit, will cause problems to slowly build. Similar to doing chores around your house. Sometimes you may skip vacuuming that one
-time but continue to neglect it and dust really starts to build and when you do go and clean it takes longer to do.
-
-Keep in mind that writing tests also adds more code that must be maintained. Writing good simple, focused, maintainable tests saves time and saves money. 
-
-### Unit test structure guidelines
-According to Microsoft, a unit test should be split up in to three main categories. These are arrange, act, and assert. Most unit tests should be short and easy to read and understand. Comments are usually not needed because the test itself should be descriptive through its code.
-
-1. Arrange – This is where you declare any of the variables that will be needed throughout the testing of each method. Everything but the method we’re testing should be set in this category.
-
-2. Act – This is where the logic happens. All of the pieces that are required to run the method(s) have already been created, so it’s time to run the method in question. This will generally contain 1-2 lines of code.
-
-3. Assert – This is the test itself. We will assert that the result of the method is supposed to either be equal to, or not equal to, the expected result defined by the user. This will generally only contain one or two lines of code.
-
-``` C#
-[TestFixture]
-public class MathHelperTest
- {
-      [TestCase(10, 20, 30)]
-      [TestCase(-5, 15, 10)]
-      public void AddNumbersTest(int a, int b, int expected)
-      {
-           //Arrange
-           MathHelper helper = new MathHelper();
-
-           //Act
-           int result = helper.Add(a, b);
-
-           //Assert
-           Assert.That(result, Is.EqualTo(expected));
-       }
-
-       // Not ideal for this kind of test, multiple assertions
-       [Test]
-       public void AddNumbersTest()
-       {
-                
-           MathHelper helper = new MathHelper();
-
-           int result = helper.Add(10, 20);
-           Assert.That(result, Is.EqualTo(30));
-
-           result = helper.Add(15, -10);
-           Assert.That(result, Is.EqualTo(5));
-       }
-
-       // Not ideal, multiple test methods with unnecessary test names would be needed
-       [Test]
-       public void AddPositiveNumbers()
-       {
-           MathHelper helper = new MathHelper();
-
-           int result = helper.Add(10, 20);
-           Assert.That(result, Is.EqualTo(30));
-       }
-       [Test]
-       public void AddNegativeNumbers()
-       {
-           MathHelper helper = new MathHelper();
-
-           int result = helper.Add(-10, -20);
-           Assert.That(result, Is.EqualTo(-30));
-       }
-}
-
-```
-
-The above example is ideal to what Dr. Beaty and Dr. Dollard said when it comes to testing arguments. A test method can be written generically and then test cases with data can be easily passed in without having to write up multiple test methods for different kinds of data or writing a very long test method with many types of data and assertions.
-
 
 ## CWMasterTeacher Testing Conventions
 
