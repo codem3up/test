@@ -20,10 +20,13 @@ NUnit offers many different kinds of attributes for marking test methods and cla
 
 `[Test]` The basic attribute for a unit test. Any methods inside a `[TestFixture]` marked with this attribute will be considered a unit test by NUnit.
 
-`[TestCase(...)]` The attribute for parameterized tests. Any methods inside a `[TestFixture]` marked with this attribute will be considered a unit test and run with the provided arguments, see below for examples of using this attribute.
+`[TestCase(...)]` The attribute for parameterized tests. Any methods inside a `[TestFixture]` marked with this attribute will be considered a unit test and run with the provided arguments. See below for examples of using this attribute.
 
 `[Author("Tester Name")]` An attribute used to denote the test author.
 
+`[SetUp]` Methods marked with this attribute will be called before *every* test within a fixture. Useful for setting up commonly used objects among tests.
+
+`[TearDown]` Methods marked with this attribute will be called after *every* test within a fixture.
 
 
 #### NUnit Assertions
