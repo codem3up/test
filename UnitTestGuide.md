@@ -283,6 +283,8 @@ CWTesting
  -->Tests
    -->Factories
      -->ClassSectionModelFactoryTest.cs
+   -->DbObjects
+     -->ClassSectionTest.cs
 ```
 
 The Tests directory should follow the directory structure of the CWMasterTeacher projects. Tests for Factories should go under the Factories folder, etc. If the folder is missing please create it. For each class that has tests written for it the tests should be contained in a file named after the class and appending the nameTest to it. Eg. the WebUtilities.cs class has its tests located under WebUtilitiesTest.cs.
