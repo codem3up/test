@@ -115,7 +115,7 @@ namespace CWTesting
 
         [Test]
         [Author("Nick Beier")]
-        public void DateTime_ToDateStringTest_FormatTest()
+        public void DateTime_ToDateString_FormatTest()
         {   
             string expectedDateFormat = "Oct 8, 2015";
             string toDateString = WebUtilities.DateTime_ToDateString(testDate);
