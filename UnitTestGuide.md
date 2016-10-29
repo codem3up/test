@@ -63,7 +63,48 @@ A list of constraints can be found [here](https://github.com/nunit/docs/wiki/Con
 
 #### NUnit examples
 
-TODO add some examples from the CWMasterTeacher code
+An example using CWMasterTeacher
+
+```C#
+using System;
+using NUnit.Framework;
+using CWMasterTeacher3;
+
+namespace CWTesting
+{
+    [TestFixture]
+    class WebUtilitiesTest
+    {   
+        private DateTime testDate;
+
+        [SetUp]
+        public void SetUp()
+        {   
+            testDate = new DateTime(2015, 10, 8, 13, 20, 0); 
+        }   
+
+        [Test]
+        [Author("Nick Beier")]
+        public void DateTime_ToLongDateString_FormatTest()
+        {   
+            string expectedDateFormat = "Thu, Oct 8";
+            string longDateFormat = WebUtilities.DateTime_ToLongDateString(testDate);
+            Assert.That(expectedDateFormat, Is.EqualTo(longDateFormat));
+
+        }   
+
+        [Test]
+        [Author("Nick Beier")]
+        public void DateTime_ToDateStringTest_FormatTest()
+        {   
+            string expectedDateFormat = "Oct 8, 2015";
+            string toDateString = WebUtilities.DateTime_ToDateString(testDate);
+            Assert.That(toDateString, Is.EqualTo(expectedDateFormat));
+        }   
+    }   
+}
+```
+
 
 
 ### Using Moq
