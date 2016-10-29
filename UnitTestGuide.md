@@ -22,7 +22,7 @@ NUnit offers many different kinds of attributes for marking test methods and cla
 
 `[TestCase(...)]` The attribute for parameterized tests. Any methods inside a `[TestFixture]` marked with this attribute will be considered a unit test and run with the provided arguments, see below for examples of using this attribute.
 
-'[Author("Tester Name")]` An attribute used to denote the test author.
+`[Author("Tester Name")]` An attribute used to denote the test author.
 
 
 
