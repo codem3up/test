@@ -34,7 +34,8 @@ time but continue to neglect it and dust really starts to build and when you do 
 
 Keep in mind that writing tests also adds more code that must be maintained. Writing good simple, focused, maintainable tests saves time and saves money. 
 
-### Unit test structure guidelines
+### Unit test that follow AAA
+
 According to Microsoft, a unit test should be split up into three main categories. These are arrange, act, and assert. Most unit tests should be short and easy to read and understand. Comments are usually not needed because the test itself should be descriptive through its code.
 
 1. Arrange – This is where you declare any of the variables that will be needed throughout the testing of each method. Everything but the method we’re testing should be set in this category.
