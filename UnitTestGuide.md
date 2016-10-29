@@ -1,4 +1,4 @@
-# Unit Test Guide
+# CWMasterTeacher Testing Guide
 
 ## What is a unit test?
 
@@ -41,6 +41,10 @@ TODO Explain which parts of CWMasterTeacher Moq is useful
 TODO Add Andrew's moq examples
 TODO get real examples eventually
 
+
+## Running unit tests
+
+TODO talk about test explorer
 
 ## Test driven development
 
