@@ -37,18 +37,18 @@ Inside of each unit test you will need to make an assertion. This is the stateme
 NUnit provides many different ways to make assertions. Some useful examples using NUnit3 style constraints:
 
 ```C#
-//Is.EqualTo
+//Test objects are equal
 Assert.That(1, Is.EqualTo(1));
 Assert.That(testString, Is.EqualTo(expectedString);
 
-//Is.Empty
+//Test if something is empty.
 Assert.That(someString, Is.Empty);
 
-//Is.True Is.False
+//Conditionals
 Assert.That(condition, Is.True);
 Assert.That(condition, Is.False);
 
-//Is.Null
+//Checking for null
 Assert.That(returnValue, Is.Null);
 
 
