@@ -218,7 +218,7 @@ When a large group is working on a project, it is always a good idea to use univ
 Because of this naming convention, we will know exactly what portion of the test either passes or fails without having to expand each individual test case. Without even knowing any code, we would understand exactly what to look at if “EmailHasValidEmailAddress” in the “StudentTest” class failed the unit test.
 
 
-### Tests should be FIRST
+### Tests should be FIRST guideline
 
 [F] : Fast
 
