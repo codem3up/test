@@ -14,9 +14,17 @@ NUnit can be used for testing all .NET languages. You can visit [NUnit Wiki](htt
 
 #### NUnit Attributes
 
-NUnit offers many different kinds of attributes for marking test methods and classes. The ones that we'll most likely be focusing on are the `[TestFixture]`, `[Test]`, and `[TestCase(...)]`
+NUnit offers many different kinds of attributes for marking test methods and classes. 
 
-`[TestFixture]` declares a class as a test fixture. All the methods in this class will be invoked if they have the `[Test]` or `[TestCase(...)]` attributes.
+`[TestFixture]` declares a class as a test fixture. This is needed for all test classes.
+
+`[Test]` The basic attribute for a unit test. Any methods inside a `[TestFixture]` marked with this attribute will be considered a unit test by NUnit.
+
+`[TestCase(...)]` The attribute for parameterized tests. Any methods inside a `[TestFixture]` marked with this attribute will be considered a unit test and run with the provided arguments, see below for examples of using this attribute.
+
+'[Author("Tester Name")]` An attribute used to denote the test author.
+
+
 
 #### NUnit Assertions
 
@@ -42,7 +50,7 @@ TODO Add Andrew's moq examples
 TODO get real examples eventually
 
 
-## Running unit tests
+## Running the tests
 
 TODO talk about test explorer
 
