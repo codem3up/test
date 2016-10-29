@@ -2,14 +2,14 @@
 
 The NUnit framework is used for testing all .NET languages. You can visit [NUnit](https://github.com/nunit) on git and for more reference when using NUnit visit there documentation page [here]()
 
-## NUnit Attributes
+### NUnit Attributes
 
 NUnit offers many different kinds of attributes for marking test methods and classes. The ones that we'll most likely be focusing on are the `[TestFixture]`, `[Test]`, and `[TestCase(...)]`
 
 `[TestFixture]` declares a class as a test fixture. All the methods in this class will be invoked if they have the `[Test]` or `[TestCase(...)]` attributes.
 
 
-## Best Practices
+### Best Practices
 According to Microsoft, a unit test should be split up in to three main categories. These are arrange, act, and assert. Most unit tests should be short and easy to read and understand. Comments are usually not needed because the test itself should be descriptive through its code.
 
 1. Arrange – This is where you declare any of the variables that will be needed throughout the testing of each method. Everything but the method we’re testing should be set in this category.
