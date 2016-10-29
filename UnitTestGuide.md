@@ -230,7 +230,7 @@ Moq is a mocking library for use in unit testing. Unit tests should be isolated 
 
 ### Where to use Moq
 
-Moq will be useful for testing the Repositories and anything that acts directly with the database.
+Moq will be useful for testing the Repositories and anything that acts directly with the database or if you wish to isolate what is not in your control you can mock that behavior as mentioned in the section above that tests are FIRST.
 
 ### Examples using Moq
 
