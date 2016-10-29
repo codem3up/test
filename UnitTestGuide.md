@@ -302,7 +302,13 @@ Because of this naming convention, we will know exactly what portion of the test
 
 ## Code Coverage
 
-TODO 90% coverage, process to measure coverage
+CWMasterTeacher uses the OpenCover and ReportGenerator packages to track the code coverage of your unit tests.
+
+All code submitted must meet a 90% code coverage minimum to be accepted into the dev branch.
+
+**Currently this is not functional** the coverage reports have yet to be implemented. This will be implemented shortly. Until then just keep the code coverage goal in mind while writing your tests.
+
+
 
 
 ## Additional help
