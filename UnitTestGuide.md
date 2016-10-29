@@ -155,6 +155,23 @@ TODO Add Andrew's moq examples
 TODO get real examples eventually
 
 
+## Structure of the CWTesting project
+
+All tests for CWMasterTeacher should be contained in files under the CWTesting project.
+
+The CWTesting project has a Tests directory where tests should be stored.
+
+```
+CWTesting
+ -->Tests
+   -->Factories
+     -->ClassSectionModelFactoryTest.cs
+   -->DbObjects
+     -->ClassSectionTest.cs
+```
+
+The Tests directory should follow the directory structure of the CWMasterTeacher projects. Tests for Factories should go under the Factories folder, etc. If the folder is missing please create it. For each class that has tests written for it the tests should be contained in a file named after the class and appending the nameTest to it. Eg. the WebUtilities.cs class has its tests located under WebUtilitiesTest.cs.
+
 ## Running the tests
 
 In Visual Studio the tests are run using the Test Explorer.
@@ -187,23 +204,6 @@ In testing behavior we should be trying to expose bugs. Beyond normal expected b
 
 
 
-
-### Structure of the CWTesting project
-
-All tests for CWMasterTeacher should be contained in files under the CWTesting project.
-
-The CWTesting project has a Tests directory where tests should be stored.
-
-```
-CWTesting
- -->Tests
-   -->Factories
-     -->ClassSectionModelFactoryTest.cs
-   -->DbObjects
-     -->ClassSectionTest.cs
-```
-
-The Tests directory should follow the directory structure of the CWMasterTeacher projects. Tests for Factories should go under the Factories folder, etc. If the folder is missing please create it. For each class that has tests written for it the tests should be contained in a file named after the class and appending the nameTest to it. Eg. the WebUtilities.cs class has its tests located under WebUtilitiesTest.cs.
 
 
 ### Unit test naming conventions
