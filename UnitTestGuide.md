@@ -113,7 +113,7 @@ The above example is ideal to what Dr. Beaty and Dr. Dollard said when it comes 
 The CWMasterTeacher project uses the NUnit framework. This guide will introduce you to the basics of NUnit.
 NUnit can be used for testing all .NET languages. You can visit [NUnit Wiki](https://github.com/nunit/docs/wiki) on github for more information on using NUnit.
 
-### NUnit Attributes
+#### NUnit Attributes
 
 NUnit offers many different kinds of attributes for marking test methods and classes. 
 
@@ -130,7 +130,7 @@ NUnit offers many different kinds of attributes for marking test methods and cla
 `[TearDown]` Methods marked with this attribute will be called after *every* test within a fixture.
 
 
-### Author Tags
+#### Author Tags
 
 It makes more sense to tag an author in the creation of a test fixture and the test methods. Other authors can come in and edit the test fixture by adding a new test method or changing a test method. The `[Author("Joe Doe", "Amanda Doe")] would be ideal for adding multiple authors.
 
@@ -151,7 +151,7 @@ Richard was the one who created the test fixture but Joe added the test method l
 More on attributes can be found [here](https://github.com/nunit/docs/wiki/Attributes).
 
 
-### NUnit Assertions
+#### NUnit Assertions
 
 Inside of each unit test you will need to make an assertion. This is the statement that must be valid for the test to pass. It is best to limit the number of assertions inside a unit test to 1 or a few.
 
@@ -185,7 +185,7 @@ Assert.That(testMethod(badArgument), Throws.ArgumentException);
 More on NUnit assertions can be found [here](https://github.com/nunit/docs/wiki/Assertions).
 A list of constraints can be found [here](https://github.com/nunit/docs/wiki/Constraints).
 
-## NUnit examples
+### NUnit examples
 
 An example using CWMasterTeacher
 
@@ -231,15 +231,15 @@ namespace CWTesting
 
 
 
-## Using Moq
+### Using Moq
 
 Moq is a mocking library for use in unit testing. Unit tests should be isolated to the object or class under testing, not any dependancies of the object. Mocks are objects created by the unit test that can stand in as a dependendcy allowing the unit test to isolate the testing object's behavior.
 
-### Where to use Moq
+#### Where to use Moq
 
 Moq will be useful for testing the Repositories and anything that acts directly with the database or if you wish to isolate what is not in your control you can mock that behavior as mentioned in the section above that tests are FIRST.
 
-### Examples using Moq
+#### Examples using Moq
 
 TODO Add Andrew's moq examples
 
