@@ -321,7 +321,7 @@ All code submitted must meet a 90% code coverage minimum to be accepted into the
 
 
 ## Additional help
-For other problems or questions you can contact the following
+For other problems, questions, or guidence please contact any of the three listed below
 
 * Richard - rdesilve@msudenver.edu 
 * Andrew - abecke11@msudenver.edu 
