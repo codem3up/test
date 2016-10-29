@@ -164,6 +164,9 @@ Assert.That(returnValue, Is.Null);
 //Constraints can be negated using Not
 Assert.That(returnValue, Is.Not.Null);
 Assert.That(someString, Is.Not.Empty);
+
+//Testing for thrown Exceptions
+Assert.That(testMethod(badArgument), Throws.ArgumentException);
 ```
 
 
@@ -227,12 +230,17 @@ Moq will be useful for testing the Repositories and anything that acts directly 
 ### Examples using Moq
 
 TODO Add Andrew's moq examples
+
 TODO get real examples eventually
 
 
 ## Running the tests
 
-TODO talk about test explorer
+In Visual Studio the tests are run using the Test Explorer.
+
+To open the Test Explorer click on the Test>Windows>Test Explorer.
+
+
 
 ## CWMasterTeacher Testing Conventions
 
