@@ -77,7 +77,7 @@ Assert.That(returnValue, Is.Not.Null);
 Assert.That(someString, Is.Not.Empty);
 
 //Testing for thrown Exceptions
-Assert.That(testMethod(badArgument), Throws.Exception.ArgumentException);
+Assert.That(testMethod(badArgument), Throws.ArgumentException);
 ```
 
 
