@@ -149,29 +149,11 @@ TODO talk about test explorer
 
 TODO add the TDD process
 
+### Tests should be FIRST
 
-## CWMasterTeacher Testing Conventions
+TODO explain what FIRST means
 
-### What should and should not be tested
-
-TODO expand on types of things to test
-
-
-### Structure of the CWTesting project
-
-TODO talk about CWTesting and file locations
-
-### Unit test naming conventions
-When a large group is working on a project, it is always a good idea to use universal naming conventions. This does not only apply to the code itself, but to the names of the classes and functions as well.
-
-1. Methods - Each testing method should be named by giving a brief description of what exactly it is testing for using the “MethodName_Description” format. 
-
-2. Classes - The naming convention here is to simply add “Test” to the name of the class which contains the method(s) we are testing. In the previous example, the Add function was part of the MathHelper object, so we named the test class **MathHelperTest**.
-
-Because of this naming convention, we will know exactly what portion of the test either passes or fails without having to expand each individual test case. Without even knowing any code, we would understand exactly what to look at if “EmailHasValidEmailAddress” in the “StudentTest” class failed the unit test.
-
-
-## Unit test structure guidelines
+### Unit test structure guidelines
 According to Microsoft, a unit test should be split up in to three main categories. These are arrange, act, and assert. Most unit tests should be short and easy to read and understand. Comments are usually not needed because the test itself should be descriptive through its code.
 
 1. Arrange – This is where you declare any of the variables that will be needed throughout the testing of each method. Everything but the method we’re testing should be set in this category.
@@ -234,6 +216,27 @@ public class MathHelperTest
 ```
 
 The above example is ideal to what Dr. Beaty and Dr. Dollard said when it comes to testing arguments. A test method can be written generically and then test cases with data can be easily passed in without having to write up multiple test methods for different kinds of data or writing a very long test method with many types of data and assertions.
+
+
+## CWMasterTeacher Testing Conventions
+
+### What should and should not be tested
+
+TODO expand on types of things to test
+
+
+### Structure of the CWTesting project
+
+TODO talk about CWTesting and file locations
+
+### Unit test naming conventions
+When a large group is working on a project, it is always a good idea to use universal naming conventions. This does not only apply to the code itself, but to the names of the classes and functions as well.
+
+1. Methods - Each testing method should be named by giving a brief description of what exactly it is testing for using the “MethodName_Description” format. 
+
+2. Classes - The naming convention here is to simply add “Test” to the name of the class which contains the method(s) we are testing. In the previous example, the Add function was part of the MathHelper object, so we named the test class **MathHelperTest**.
+
+Because of this naming convention, we will know exactly what portion of the test either passes or fails without having to expand each individual test case. Without even knowing any code, we would understand exactly what to look at if “EmailHasValidEmailAddress” in the “StudentTest” class failed the unit test.
 
 
 ## Code Coverage
