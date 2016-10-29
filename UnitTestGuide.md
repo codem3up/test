@@ -2,7 +2,9 @@
 
 ## What is a unit test?
 
-TODO cite wikipedia or some source.
+MSDN outlines the goal of unit testing: “The primary goal of unit testing is to take the smallest piece of testable software in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect."
+
+TODO add some more here?
 
 ## Test driven development
 
