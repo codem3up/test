@@ -274,7 +274,12 @@ In testing behavior we should be trying to expose bugs. Beyond normal expected b
 
 ### Structure of the CWTesting project
 
-TODO talk about CWTesting and file locations
+All tests for CWMasterTeacher should be contained in files under the CWTesting project.
+
+The CWTesting project has a Tests directory where tests should be stored.
+
+The Tests directory should follow the directory structure of the CWMasterTeacher projects. Tests for Factories should go under the Factories folder, etc. If the folder is missing please create it. For each class that has tests written for it the tests should be contained in a file named after the class and appending the nameTest to it. Eg. the WebUtilities.cs class has its tests located under WebUtilitiesTest.cs.
+
 
 ### Unit test naming conventions
 When a large group is working on a project, it is always a good idea to use universal naming conventions. This does not only apply to the code itself, but to the names of the classes and functions as well.
