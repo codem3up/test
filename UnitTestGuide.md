@@ -263,7 +263,7 @@ In testing behavior we should be trying to expose bugs. Beyond normal expected b
 1. Nullable types
   * Any time something can accept a nullable type we should test passing null in and make sure the object handles it gracefully. The exception assertions above are useful here.
 2. Empty strings
-3. Boundary case
+3. Boundary cases
   * If it accepts a number what happens if the number is 0
   * Negative numbers
   * Int32.MaxValue
@@ -277,6 +277,13 @@ In testing behavior we should be trying to expose bugs. Beyond normal expected b
 All tests for CWMasterTeacher should be contained in files under the CWTesting project.
 
 The CWTesting project has a Tests directory where tests should be stored.
+
+```
+CWTesting
+ -->Tests
+   -->Factories
+     -->ClassSectionModelFactoryTest.cs
+```
 
 The Tests directory should follow the directory structure of the CWMasterTeacher projects. Tests for Factories should go under the Factories folder, etc. If the folder is missing please create it. For each class that has tests written for it the tests should be contained in a file named after the class and appending the nameTest to it. Eg. the WebUtilities.cs class has its tests located under WebUtilitiesTest.cs.
 
