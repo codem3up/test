@@ -290,10 +290,10 @@ public class TestCar
 
     [TestCase(25, false)]
 	[TestCase(5, true)]
-    public void IsCarLowOnFuelTest(int fuelAmt, Boolean expected)
+    public void CarFuelTest(int fuelAmt, Boolean expected)
     {
         // Arrange
-        mockEngine.Setup(x => x.getFuel()).Returns(25);
+        mockEngine.Setup(x => x.getFuel()).Returns(fuelAmt);
 
         // Act
         Boolean theCarFuelLevel = !testCar.isCarLowOnGas();
