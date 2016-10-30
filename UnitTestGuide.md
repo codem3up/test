@@ -51,6 +51,10 @@ Inside of each unit test you will need to make an assertion. This is the stateme
 NUnit provides many different ways to make assertions. Some useful examples using NUnit3 style constraints:
 
 ```C#
+// Pattern for assertions
+Assert.That(testData, <constraint>, failedMessage);
+
+
 //Test objects are equal
 Assert.That(1, Is.EqualTo(1));
 Assert.That(testString, Is.EqualTo(expectedString);
@@ -73,7 +77,7 @@ Assert.That(someString, Is.Not.Empty);
 //Testing for thrown Exceptions
 Assert.That(testMethod(badArgument), Throws.ArgumentException);
 
-// For more context for a given assertion
+// For more context on an assertion failing
 Assert.That( a, Is.Empty, "A was not empty");
 ```
 
@@ -212,7 +216,7 @@ public class AnimalTest
 
         // Assert - The mocked list can now be part of a test or test 
         // an object's functionality
-        Assert.That(actualList, !Is.Empty, "The mock data is empty");
+        Assert.That(actualList, Is.Not.Empty, "The mock data is empty");
     }
 }
 ```
