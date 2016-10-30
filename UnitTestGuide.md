@@ -221,6 +221,87 @@ public class AnimalTest
 }
 ```
 
+One last simple example using the Car/Engine mocking test. The car needs a mock engine to be tested.
+
+
+The Mock
+``` C#
+public interface Engine
+{
+    void start();
+    int getFuel();
+    Boolean isRunning();
+}
+```
+
+The object being tested, pretend that the methods we are testing are not implemented yet.
+
+``` C#
+public class Car
+{
+    Engine engine;
+
+    public Car(Engine engine)
+    {
+        this.engine = engine;
+        this.engine.start();
+    }
+
+    public Boolean isCarRunning()
+    {
+        return engine.isRunning();
+    }
+
+    public Boolean isCarLowOnGas()
+    {
+        return engine.getFuel() < 10;
+    }
+}
+```
+
+The Test Class
+``` C#
+[TestFixture]
+public class TestCar
+{
+
+    private Car testCar;
+    private Mock<Engine> mockEngine;
+
+    [SetUp]
+    public void SetUp()
+    {
+        mockEngine = new Mock<Engine>();
+        testCar = new Car(mockEngine.Object);
+    }
+
+    [Test]
+    public void IsCarRunningTest()
+    {
+        // Arrange
+        mockEngine.Setup(x => x.isRunning()).Returns(true);
+            
+        // Act
+        Boolean theCarIsRunning = testCar.isCarRunning();
+
+        // Assert
+        Assert.That(theCarIsRunning, "The car's engine by default should be running");
+    }
+
+    [Test]
+    public void IsCarLowOnFuelTest()
+    {
+        // Arrange
+        mockEngine.Setup(x => x.getFuel()).Returns(25);
+
+        // Act
+        Boolean theCarIsNotLowOnFuel = !testCar.isCarLowOnGas();
+
+        // Assert
+        Assert.That(theCarIsNotLowOnFuel, "The car shouldn't be low on fuel");
+    }
+}
+```
 
 
 ## Structure of the CWTesting project
