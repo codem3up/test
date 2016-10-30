@@ -219,10 +219,6 @@ public class AnimalTest
 
 
 
-
-TODO get real examples eventually
-
-
 ## Structure of the CWTesting project
 
 All tests for CWMasterTeacher should be contained in files under the CWTesting project.
