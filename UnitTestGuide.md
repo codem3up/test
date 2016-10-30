@@ -153,7 +153,7 @@ interface MockObject
 }
 ```
 
-The example object
+The example data
 ``` C#
 class Animal
 {
