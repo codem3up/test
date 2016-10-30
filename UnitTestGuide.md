@@ -34,26 +34,26 @@ NUnit offers many different kinds of attributes for marking test methods and cla
 
 `[TestCase(...)]` The attribute for parameterized tests. Any methods inside a `[TestFixture]` marked with this attribute will be considered a unit test and run with the provided arguments. See below for examples of using this attribute.
 
-`[Author("Tester Name")]` An attribute used to denote the test author.
 
 `[SetUp]` Methods marked with this attribute will be called before *every* test within a fixture. Useful for setting up commonly used objects among tests.
 
 `[TearDown]` Methods marked with this attribute will be called after *every* test within a fixture.
 
 
+`[Author("Tester Name")]` An attribute used to denote the test author.
 #### Author Tags
 
 It makes more sense to tag an author in the creation of a test fixture and the test methods. Other authors can come in and edit the test fixture by adding a new test method or changing a test method. The `[Author("Joe Doe", "Amanda Doe")] would be ideal for adding multiple authors.
 
 ```C#
 [TestFixture]
-    [Author("Richard")]
-    public class Test1
-    {
-        [TestCase(10, 20, 30)]
-        [TestCase(-5, 15, 10)]
-        [Author("Joe")]
-        public void AddNumbersTest(int a, int b, int expected)
+[Author("Richard")]
+public class Test1
+{
+    [TestCase(10, 20, 30)]
+    [TestCase(-5, 15, 10)]
+    [Author("Joe")]
+    public void AddNumbersTest(int a, int b, int expected)
 ```
 
 Richard was the one who created the test fixture but Joe added the test method later. If both Richard and Joe made the fixture then naturally they would both be in there as well.
