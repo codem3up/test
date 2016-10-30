@@ -150,16 +150,14 @@ Moq is a mocking library for use in unit testing. Unit tests should be isolated 
 
 Mocks are used to isolate test conditions especially if they are out of your control or if you are testing with a database mocks can be used to 'mock' objects that return data for testing.
 
+For example, if you are testing a Car object which has an Engine and the Engine isn't implemented yet the Car needs a Mock Engine in order to test the Car. Mock information about the Engine can be returned
+by this mock or even mock the state of the Engine. 
+
 Moq will be useful for testing the Repositories and anything that acts directly with the database.
 
 #### Examples using Moq
 
-The following simple example introduces how to use Moq. To start you setup the object that we are mocking which is an interface that will contain the method or methods for both the object and mock object.
-
-A quick example, if you are testing a Car which has an Engine and the Engine isn't implemented yet the Car needs something in order to be tested. The Engine would need to be mocked, mock information about the Engine can be returned
-by this mock or even mock the state of the Engine. 
-
-In the example we are just mocking the object that will have the method we wish to get data for testing with.
+In following example we are just mocking the object that will have a method we wish to get data from.
 
 
 The Interface containing method(s) to test or mock
