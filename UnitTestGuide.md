@@ -4,7 +4,7 @@
 
 MSDN outlines the goal of unit testing: “The primary goal of unit testing is to take the smallest piece of testable software in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect."
 
-A unit test then provides a strict, written contract that the piece of code must satisfy[1](https://en.wikipedia.org/wiki/Unit_testing).
+A unit test then provides a strict, written contract that the piece of code must satisfy. [1](https://en.wikipedia.org/wiki/Unit_testing)
 
 ## Test driven development
 
