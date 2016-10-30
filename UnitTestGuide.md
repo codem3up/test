@@ -275,9 +275,9 @@ When a large group is working on a project, it is always a good idea to use univ
 Because of this naming convention, we will know exactly what portion of the test either passes or fails without having to expand each individual test case. Without even knowing any code, we would understand exactly what to look at if “EmailHasValidEmailAddress” in the “StudentTest” class failed the unit test.
 
 
-### Use of Author Tags
+### Use of Author Attributes
 
-Author tags should be used for the creation of a test fixture as well as unit test methods. Other authors can come in and edit the test fixture by adding a new test method or changing a test method. The `[Author("Joe Doe", "Amanda Doe")]` supports adding multiple adding multiple authors.
+Author attributes should be used whenever a test fixture or unit test method is created. Other authors can come in and edit the test fixture by adding a new test method or changing a test method. The attribute supports multiple authors as shown below.
 
 ```C#
 [TestFixture]
@@ -286,11 +286,11 @@ public class Test1
 {
     [TestCase(10, 20, 30)]
     [TestCase(-5, 15, 10)]
-    [Author("Joe")]
+    [Author("Joe", "Amanda")]
     public void AddNumbersTest(int a, int b, int expected)
 ```
 
-Richard was the one who created the test fixture but Joe added the test method later. If both Richard and Joe made the fixture then naturally they would both be in there as well.
+Richard was the one who created the test fixture later Joe and Amanda added a new unit test.
 
 ### Tests should be FIRST guideline
 
