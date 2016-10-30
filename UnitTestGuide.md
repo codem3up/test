@@ -148,11 +148,88 @@ Moq is a mocking library for use in unit testing. Unit tests should be isolated 
 
 #### Where to use Moq
 
-Moq will be useful for testing the Repositories and anything that acts directly with the database or if you wish to isolate what is not in your control you can mock that behavior as mentioned in the section above that tests are FIRST.
+Mocks are used to isolate test conditions especially if they are out of your control or if you are testing with a database mocks can be used to 'mock' objects that return data for testing.
+
+Moq will be useful for testing the Repositories and anything that acts directly with the database.
 
 #### Examples using Moq
 
-TODO Add Andrew's moq examples
+The following simple example introduces how to use Moq. To start you setup the object that we are mocking which is an interface that will contain the method or methods for both the object and mock object.
+
+A quick example, if you are testing a Car which has an Engine and the Engine isn't implemented yet the Car needs something in order to be tested. The Engine would need to be mocked, mock information about the Engine can be returned
+by this mock or even mock the state of the Engine. 
+
+In the example we are just mocking the object that will have the method we wish to get data for testing with.
+
+
+The Interface containing method(s) to test or mock
+``` C#
+interface MockObject
+{
+    List<Animal> getAnimals();
+}
+```
+
+The example object
+``` C#
+class Animal
+{
+    private string Type {get; set;}
+
+    public Animal(string type)
+    {
+        Type = type;
+    }
+}
+```
+
+The test controller
+``` C#
+public class MockObjectController
+{
+    private MockObject Mock;
+
+    public AnimalController (IAnimalRepository mock)
+    {
+        Mock = mock;
+    }
+
+    public List<Animal> getAnimals()
+    {
+        return Mock.getAnimals();
+    }
+}
+```
+
+The Test
+``` C#
+[TestFixture]
+[Author("Andrew Becker", "Richard DeSilvey")]
+public class AnimalTest
+{
+    [Test]
+    public void MockingTest()
+    {
+        // Arrange - Create a mock that will return mock data or expected test data
+        List<Animal> expectedList = new List<Animal>();
+        expectedList.Add(new Animal("Bear"));
+        expectedList.Add(new Animal("Wolf"));
+
+        Mock<MockObject> mockObject = new Mock<MockObject>();
+        mockObject.Setup(x => x.getAnimals()).Returns(expectedList);
+
+        MockObjectController controller = new MockObjectController(mockObject.Object);
+
+        // Act - Use the controller to call the method that is being tested or get 
+        // mock data
+        List<Animal> actualList = controller.getAnimals();
+
+        // Assert - The mocked list can now be part of a test or test 
+        // an object's functionality
+        Assert.That(actualList, !Is.Empty);
+    }
+}
+```
 
 TODO get real examples eventually
 
