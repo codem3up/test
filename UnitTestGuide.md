@@ -203,13 +203,16 @@ public class AnimalTest
 
         MockObjectController controller = new MockObjectController(mockObject.Object);
 
-        // Act - Use the controller to call the method that is being tested or get 
+        // Alternatively you can skip the controller
+        MockObject mock = mockObject.Object;
+
+        // Act - Use the controller, or mock object, to call the method that is being tested or get 
         // mock data
         List<Animal> actualList = controller.getAnimals();
 
         // Assert - The mocked list can now be part of a test or test 
         // an object's functionality
-        Assert.That(actualList, !Is.Empty);
+        Assert.That(actualList, !Is.Empty, "The mock data is empty");
     }
 }
 ```
