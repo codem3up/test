@@ -39,25 +39,7 @@ NUnit offers many different kinds of attributes for marking test methods and cla
 
 `[TearDown]` Methods marked with this attribute will be called after *every* test within a fixture.
 
-
 `[Author("Tester Name")]` An attribute used to denote the test author.
-#### Author Tags
-
-It makes more sense to tag an author in the creation of a test fixture and the test methods. Other authors can come in and edit the test fixture by adding a new test method or changing a test method. The `[Author("Joe Doe", "Amanda Doe")] would be ideal for adding multiple authors.
-
-```C#
-[TestFixture]
-[Author("Richard")]
-public class Test1
-{
-    [TestCase(10, 20, 30)]
-    [TestCase(-5, 15, 10)]
-    [Author("Joe")]
-    public void AddNumbersTest(int a, int b, int expected)
-```
-
-Richard was the one who created the test fixture but Joe added the test method later. If both Richard and Joe made the fixture then naturally they would both be in there as well.
-
 
 More on attributes can be found [here](https://github.com/nunit/docs/wiki/Attributes).
 
@@ -295,6 +277,23 @@ When a large group is working on a project, it is always a good idea to use univ
 
 Because of this naming convention, we will know exactly what portion of the test either passes or fails without having to expand each individual test case. Without even knowing any code, we would understand exactly what to look at if “EmailHasValidEmailAddress” in the “StudentTest” class failed the unit test.
 
+
+### Use of Author Attributes
+
+Author attributes should be used whenever a test fixture or unit test method is created. Other authors can come in and edit the test fixture by adding a new test method or changing a test method. The attribute supports multiple authors as shown below.
+
+```C#
+[TestFixture]
+[Author("Richard")]
+public class Test1
+{
+    [TestCase(10, 20, 30)]
+    [TestCase(-5, 15, 10)]
+    [Author("Joe", "Amanda")]
+    public void AddNumbersTest(int a, int b, int expected)
+```
+
+Richard was the one who created the test fixture, later Joe and Amanda added a new unit test.
 
 ### Tests should be FIRST guideline
 
