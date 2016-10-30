@@ -296,7 +296,7 @@ public class TestCar
         mockEngine.Setup(x => x.getFuel()).Returns(fuelAmt);
 
         // Act
-        Boolean theCarFuelLevel = !testCar.isCarLowOnGas();
+        Boolean theCarFuelLevel = testCar.isCarLowOnGas();
 
         // Assert
         Assert.That(theCarFuelLevel, Is.EqualTo(expected));
