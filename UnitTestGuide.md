@@ -288,17 +288,18 @@ public class TestCar
         Assert.That(theCarIsRunning, "The car's engine by default should be running");
     }
 
-    [Test]
-    public void IsCarLowOnFuelTest()
+    [TestCase(25, false)]
+	[TestCase(5, true)]
+    public void IsCarLowOnFuelTest(int fuelAmt, Boolean expected)
     {
         // Arrange
         mockEngine.Setup(x => x.getFuel()).Returns(25);
 
         // Act
-        Boolean theCarIsNotLowOnFuel = !testCar.isCarLowOnGas();
+        Boolean theCarFuelLevel = !testCar.isCarLowOnGas();
 
         // Assert
-        Assert.That(theCarIsNotLowOnFuel, "The car shouldn't be low on fuel");
+        Assert.That(theCarFuelLevel, Is.EqualTo(expected));
     }
 }
 ```
