@@ -337,6 +337,8 @@ According to Microsoft, a unit test should be split up into three main categorie
 
 3. Assert – This is the test itself. We will assert that the result of the method is supposed to either be equal to, or not equal to, the expected result defined by the user. This will generally only contain one or two lines of code.
 
+The example below demonstrates AAA as well as taking into consideration naming conventions and how to build proper test cases
+
 ``` C#
 [TestFixture]
 public class MathHelperTest
