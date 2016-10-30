@@ -290,7 +290,7 @@ public class Test1
     public void AddNumbersTest(int a, int b, int expected)
 ```
 
-Richard was the one who created the test fixture later Joe and Amanda added a new unit test.
+Richard was the one who created the test fixture, later Joe and Amanda added a new unit test.
 
 ### Tests should be FIRST guideline
 
