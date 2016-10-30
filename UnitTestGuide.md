@@ -72,6 +72,9 @@ Assert.That(someString, Is.Not.Empty);
 
 //Testing for thrown Exceptions
 Assert.That(testMethod(badArgument), Throws.ArgumentException);
+
+// For more context for a given assertion
+Assert.That( a, Is.Empty, "A was not empty");
 ```
 
 
