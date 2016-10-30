@@ -4,7 +4,7 @@
 
 MSDN outlines the goal of unit testing: “The primary goal of unit testing is to take the smallest piece of testable software in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect."
 
-TODO add some more here?
+A unit test then provides a strict, written contract that the piece of code must satisfy[1](https://en.wikipedia.org/wiki/Unit_testing).
 
 ## Test driven development
 
@@ -22,7 +22,7 @@ Test driven development is a simple iterative cycle where the tests are written 
 ### Using NUnit 
 
 The CWMasterTeacher project uses the NUnit framework. This guide will introduce you to the basics of NUnit.
-NUnit can be used for testing all .NET languages. You can visit [NUnit Wiki](https://github.com/nunit/docs/wiki) on github for more information on using NUnit.
+NUnit can be used for testing all .NET languages. You can visit the [NUnit Wiki](https://github.com/nunit/docs/wiki) on github for more information on using NUnit.
 
 #### NUnit Attributes
 
